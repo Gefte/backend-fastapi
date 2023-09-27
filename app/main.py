@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from typing import List
+from typing import List, Dict
 
 app = FastAPI()
 
@@ -17,9 +17,9 @@ def fibonacci_recursive(qtd_elementos: int) -> List[int]:
             fib_sequence.append(next_element)
         return fib_sequence
 
-@app.get("/health", response_model=str)
+@app.get("/health", response_model=Dict)
 def read_root():
-    return {"Estou saudavel"}
+    return {"status": "Estou saudável"}
 
 
 @app.get("/fibonacci/{qtd_elementos}", response_model=List[int])

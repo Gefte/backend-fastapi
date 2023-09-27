@@ -1,1 +1,4 @@
 .venv
+config.txt
+deployment.yaml
+service.yaml
